@@ -24,12 +24,10 @@ Partial Class Grephyr
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Grephyr))
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
-        Me.RootNode = New Global.Grephyr.CircleText()
+        Me.RootNode = New Global.Grephyr.CircleText("Root")
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -41,11 +39,6 @@ Partial Class Grephyr
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Add"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'FileSystemWatcher1
-        '
-        Me.FileSystemWatcher1.EnableRaisingEvents = True
-        Me.FileSystemWatcher1.SynchronizingObject = Me
         '
         'RootNode
         '
@@ -97,14 +90,12 @@ Partial Class Grephyr
         Me.Controls.Add(Me.RootNode)
         Me.Name = "Grephyr"
         Me.Text = "Grephyr"
-        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
 End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents RootNode As Global.Grephyr.CircleText
-    Friend WithEvents FileSystemWatcher1 As System.IO.FileSystemWatcher
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel

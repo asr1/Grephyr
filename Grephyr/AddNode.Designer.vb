@@ -27,7 +27,7 @@ Partial Class AddNode
         Me.fromList = New System.Windows.Forms.ComboBox()
         Me.toList = New System.Windows.Forms.ComboBox()
         Me.Add = New System.Windows.Forms.Button()
-        Me.cancelButton = New System.Windows.Forms.Button()
+        Me.cancelBtn = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -73,21 +73,21 @@ Partial Class AddNode
         Me.Add.Text = "Add"
         Me.Add.UseVisualStyleBackColor = True
         '
-        'cancelButton
+        'cancelBtn
         '
-        Me.cancelButton.Location = New System.Drawing.Point(100, 211)
-        Me.cancelButton.Name = "cancelButton"
-        Me.cancelButton.Size = New System.Drawing.Size(75, 23)
-        Me.cancelButton.TabIndex = 7
-        Me.cancelButton.Text = "Cancel"
-        Me.cancelButton.UseVisualStyleBackColor = True
+        Me.cancelBtn.Location = New System.Drawing.Point(100, 211)
+        Me.cancelBtn.Name = "cancelBtn"
+        Me.cancelBtn.Size = New System.Drawing.Size(75, 23)
+        Me.cancelBtn.TabIndex = 7
+        Me.cancelBtn.Text = "Cancel"
+        Me.cancelBtn.UseVisualStyleBackColor = True
         '
         'AddNode
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 262)
-        Me.Controls.Add(Me.cancelButton)
+        Me.Controls.Add(Me.cancelBtn)
         Me.Controls.Add(Me.Add)
         Me.Controls.Add(Me.toList)
         Me.Controls.Add(Me.fromList)
@@ -104,5 +104,5 @@ Partial Class AddNode
     Friend WithEvents fromList As System.Windows.Forms.ComboBox
     Friend WithEvents toList As System.Windows.Forms.ComboBox
     Friend WithEvents Add As System.Windows.Forms.Button
-    Friend WithEvents cancelButton As System.Windows.Forms.Button
+    Friend WithEvents cancelBtn As System.Windows.Forms.Button
 End Class

@@ -1,8 +1,5 @@
 ﻿Public Class AddNode
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
 
 
     Private Sub comboChange(ByVal sender As Object, _
@@ -23,9 +20,7 @@
             End If
         Next
 
-        If box.SelectedItem = "[New Node]" Then
-            'MsgBox("new")
-        End If
+
 
 
     End Sub
@@ -46,7 +41,7 @@
         toList.Items.Add("[New Node]")
     End Sub
 
-    Private Sub cancelButton_Click(sender As Object, e As EventArgs) Handles cancelButton.Click
+    Private Sub cancelButton_Click(sender As Object, e As EventArgs) Handles cancelBtn.Click
         For Each cont As Control In Grephyr.Controls
             If TypeOf cont Is CircleText Then
                 cont.BackgroundImage = My.Resources.Grephyr4 'Normal
@@ -63,6 +58,20 @@
             End If
         Next
 
-        'TODO create new node
+
+        'TODO position relative to from
+        If fromList.SelectedItem = "[New Node]" Then
+            Dim label As String = InputBox("What is the label of the new from node?")
+            Grephyr.Controls.Add(New CircleText(label))
+        End If
+        If toList.SelectedItem = "[New Node]" Then
+            Dim label As String = InputBox("What is the label of the new from node?")
+            Grephyr.Controls.Add(New CircleText(label))
+        End If
+
+
+
+
+        Me.Hide()
     End Sub
 End Class

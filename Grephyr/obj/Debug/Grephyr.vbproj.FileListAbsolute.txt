@@ -11,3 +11,4 @@ c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\bin\Debug\Gr
 c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.vbprojResolveAssemblyReference.cache
 c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.exe
 c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.AddNode.resources
+C:\Users\Alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\bin\Debug\Grephyr.xml

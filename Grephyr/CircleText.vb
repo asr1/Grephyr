@@ -4,6 +4,11 @@
     'Private oldLoc As Point
     Private circ As CircleText 'Reference object for old location
 
+    Sub New(ByVal name As String)
+        InitializeComponent()
+        Me.label.Text = name
+    End Sub
+
     Private Sub CircleText_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         '   oldLoc =  = Me.Location
