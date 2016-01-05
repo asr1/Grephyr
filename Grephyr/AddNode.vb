@@ -1,35 +1,35 @@
-﻿Public Class AddNode
+﻿Imports Microsoft.VisualBasic.PowerPacks
 
+Public Class AddNode
 
+    'The nodes selected by the dropdown
+    Dim fromNode = New CircleText(""), toNode = New CircleText("")
 
     Private Sub comboChange(ByVal sender As Object, _
         ByVal e As System.EventArgs) Handles fromList.SelectedIndexChanged, toList.SelectedIndexChanged
 
         Dim box As ComboBox = CType(sender, ComboBox)
 
-        'Determine which combobox we're dealing with
-        ' Dim name As String = CType(sender, ComboBox).Name
-
-
-
         For Each cont As Control In Grephyr.Controls
             If TypeOf cont Is CircleText Then
                 If CType(cont, CircleText).label.Text = box.SelectedItem Then
+                    'Select the correct node
                     cont.BackgroundImage = My.Resources.GrephyrSelected 'Selected
+                    If box.Name = "fromList" Then
+                        fromNode = cont
+                    ElseIf box.Name = "toList" Then
+                        toNode = cont
+                    End If
                 End If
             End If
         Next
-
+    
 
 
 
     End Sub
 
     Private Sub AddNode_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Same handler for both code
-        'AddHandler fromList.SelectedIndexChanged, AddressOf comboChange
-        'AddHandler toList.SelectedIndexChanged, AddressOf comboChange
-
         'Populate both comboboxes
         For Each cont As Control In Grephyr.Controls
             If TypeOf cont Is CircleText Then
@@ -44,7 +44,7 @@
     Private Sub cancelButton_Click(sender As Object, e As EventArgs) Handles cancelBtn.Click
         For Each cont As Control In Grephyr.Controls
             If TypeOf cont Is CircleText Then
-                cont.BackgroundImage = My.Resources.Grephyr4 'Normal
+                cont.BackgroundImage = My.Resources.Grephyr 'Normal
             End If
         Next
         Me.Hide()
@@ -54,23 +54,40 @@
     Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
         For Each cont As Control In Grephyr.Controls
             If TypeOf cont Is CircleText Then
-                cont.BackgroundImage = My.Resources.Grephyr4 'Normal
+                cont.BackgroundImage = My.Resources.Grephyr 'Normal
             End If
         Next
 
-
         'TODO position relative to from
+
+        Dim label = "", fromLabel = "", toLabel = ""
+
+        'Add new nodes
         If fromList.SelectedItem = "[New Node]" Then
-            Dim label As String = InputBox("What is the label of the new from node?")
-            Grephyr.Controls.Add(New CircleText(label))
+            'Use a space as the default to tell if they hit cancel or ok
+            fromLabel = InputBox("What is the label of the new from node?", " ")
+            If Not fromLabel = "" Then
+                fromNode = New CircleText(fromLabel)
+                Grephyr.Controls.Add(fromNode)
+            End If
         End If
+
         If toList.SelectedItem = "[New Node]" Then
-            Dim label As String = InputBox("What is the label of the new from node?")
-            Grephyr.Controls.Add(New CircleText(label))
+            toLabel = InputBox("What is the label of the new to node?", " ")
+            If Not toLabel = "" Then
+                toNode = New CircleText(toLabel)
+                Grephyr.Controls.Add(toNode)
+            End If
         End If
 
+        'Drawline
+        Dim canvas As New ShapeContainer
+        canvas.Parent = Grephyr
+        Dim line As New LineShape
+        line.Parent = canvas
 
-
+        line.StartPoint = fromNode.Location
+        line.EndPoint = toNode.Location
 
         Me.Hide()
     End Sub

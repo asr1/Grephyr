@@ -22,10 +22,9 @@ Partial Class CircleText
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CircleText))
         Me.label = New System.Windows.Forms.TextBox()
-        Me.SuspendLayout()
+        Me.SuspendLayout
         '
         'label
         '
@@ -40,21 +39,19 @@ Partial Class CircleText
         'CircleText
         '
         Me.AccessibleName = "GraphNode"
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.Transparent
-        Me.BackgroundImage = Global.Grephyr.My.Resources.Resources.Grephyr4
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"),System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Controls.Add(Me.label)
         Me.Name = "CircleText"
         Me.Size = New System.Drawing.Size(195, 193)
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
-    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
-    Friend WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
+End Sub
     Friend WithEvents label As System.Windows.Forms.TextBox
 
 End Class

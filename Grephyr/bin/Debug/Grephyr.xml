@@ -19,22 +19,6 @@ Grephyr
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member><member name="P:Grephyr.My.Resources.Resources.Grephyr1">
-	<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Grephyr.My.Resources.Resources.Grephyr2">
-	<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Grephyr.My.Resources.Resources.Grephyr3">
-	<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Grephyr.My.Resources.Resources.Grephyr4">
-	<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
 </member><member name="P:Grephyr.My.Resources.Resources.GrephyrSelected">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

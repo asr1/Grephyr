@@ -4,6 +4,8 @@
     'Private oldLoc As Point
     Private circ As CircleText 'Reference object for old location
 
+    ' Public neighbors() As CircleText 'Keep track of all neighbors
+
     Sub New(ByVal name As String)
         InitializeComponent()
         Me.label.Text = name
