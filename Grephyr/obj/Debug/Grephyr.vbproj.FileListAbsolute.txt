@@ -1,0 +1,13 @@
+c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\bin\Debug\Grephyr.pdb
+c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.Resources.resources
+c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.vbproj.GenerateResource.Cache
+c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.xml
+c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.pdb
+c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.CircleText.resources
+c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.Grephyr.resources
+c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\bin\Debug\Grephyr.dll
+c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\bin\Debug\Grephyr.exe.config
+c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\bin\Debug\Grephyr.exe
+c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.vbprojResolveAssemblyReference.cache
+c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.exe
+c:\users\alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.AddNode.resources
