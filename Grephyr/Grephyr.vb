@@ -1,4 +1,8 @@
-﻿Public Class Grephyr
+﻿Imports Microsoft.VisualBasic.PowerPacks
+
+Public Class Grephyr
+
+    Public canvas As New ShapeContainer
 
     Private nodeCount As Integer = 1
 

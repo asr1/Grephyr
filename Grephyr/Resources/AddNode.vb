@@ -2,8 +2,6 @@
 
 Public Class AddNode
 
-
-
     'The nodes selected by the dropdown
     Dim fromNode = New CircleText(""), toNode = New CircleText("")
 
@@ -27,12 +25,12 @@ Public Class AddNode
         Next
     
 
-
-
     End Sub
 
-    Private Sub AddNode_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub AddNode_Load(sender As Object, e As EventArgs) Handles MyBase.Activated
         'Populate both comboboxes
+        fromList.Items.Clear()
+        toList.Items.Clear()
         For Each cont As Control In Grephyr.Controls
             If TypeOf cont Is CircleText Then
                 fromList.Items.Add(CType(cont, CircleText).label.Text)
@@ -82,14 +80,20 @@ Public Class AddNode
             End If
         End If
 
-        'Drawline
-        Dim canvas As New ShapeContainer
-        canvas.Parent = Grephyr
-        Dim line As New LineShape
-        line.Parent = canvas
+        'Fromnode is null. Why?
+        CType(fromNode, CircleText).neighbors.Add(toNode)
+        CType(toNode, CircleText).neighbors.Add(fromNode)
 
-        line.StartPoint = fromNode.Location
-        line.EndPoint = toNode.Location
+        'Drawline
+        Grephyr.canvas.Parent = Grephyr
+        Dim line As New LineShape
+        line.Parent = Grephyr.canvas
+
+        line.StartPoint = fromNode.cloc
+        line.EndPoint = toNode.cloc
+
+        CType(fromNode, CircleText).lines.Add(line)
+        CType(toNode, CircleText).lines.Add(line)
 
         Me.Hide()
     End Sub

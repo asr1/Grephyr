@@ -1,10 +1,14 @@
-﻿Public Class CircleText
+﻿Imports Microsoft.VisualBasic.PowerPacks
+
+Public Class CircleText
     Private drag As Boolean = False
     Private xPos, yPos As Integer
     'Private oldLoc As Point
+    Public cLoc As Point = New Point(Me.Location.X + Me.Width / 2, Me.Location.Y + Me.Height / 2) 'Center of the circle
     Private circ As CircleText 'Reference object for old location
 
-    ' Public neighbors() As CircleText 'Keep track of all neighbors
+    Public neighbors As New List(Of CircleText) 'Keep track of all neighbors
+    Public lines As New List(Of LineShape)    'And lines
 
     Sub New(ByVal name As String)
         InitializeComponent()
@@ -22,8 +26,7 @@
 
 
     Private Sub CircleText_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        '   oldLoc =  = Me.Location
+        cLoc = New Point(Me.Location.X + Me.Width / 2, Me.Location.Y + Me.Height / 2)
     End Sub
 
     Private Sub CircleText_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
@@ -42,6 +45,24 @@
         If drag Then
             'Difference between old location and new
             Me.Location = New Point(circ.Location.X + e.X - xPos, circ.Location.Y + e.Y - yPos)
+            Me.cLoc = New Point(Me.Location.X + Me.Width / 2, Me.Location.Y + Me.Height / 2)
+
+            'Delete all old lines and draw new ones in the new location
+            For Each line As LineShape In Me.lines
+                Grephyr.canvas.Shapes.Remove(line)
+            Next
+
+            For Each neighbor As CircleText In Me.neighbors
+                Dim line As New LineShape
+                line.Parent = Grephyr.canvas
+
+                line.StartPoint = Me.cLoc
+                line.EndPoint = neighbor.cLoc
+
+                Me.lines.Add(line)
+                neighbor.lines.Add(line)
+            Next
+
         End If
     End Sub
 

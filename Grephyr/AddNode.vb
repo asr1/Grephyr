@@ -88,8 +88,8 @@ Public Class AddNode
         Dim line As New LineShape
         line.Parent = canvas
 
-        line.StartPoint = fromNode.Location
-        line.EndPoint = toNode.Location
+        line.StartPoint = fromNode.cloc
+        line.EndPoint = toNode.cloc
 
         Me.Hide()
     End Sub
