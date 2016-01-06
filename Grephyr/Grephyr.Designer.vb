@@ -24,10 +24,10 @@ Partial Class Grephyr
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Grephyr))
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.RootNode = New Global.Grephyr.CircleText("Root")
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.RootNode2 = New Global.Grephyr.CircleText()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -39,18 +39,6 @@ Partial Class Grephyr
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Add"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'RootNode
-        '
-        Me.RootNode.AccessibleName = "GraphNode"
-        Me.RootNode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.RootNode.BackColor = System.Drawing.Color.Transparent
-        Me.RootNode.BackgroundImage = CType(resources.GetObject("RootNode.BackgroundImage"), System.Drawing.Image)
-        Me.RootNode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.RootNode.Location = New System.Drawing.Point(164, 70)
-        Me.RootNode.Name = "RootNode"
-        Me.RootNode.Size = New System.Drawing.Size(195, 193)
-        Me.RootNode.TabIndex = 2
         '
         'Button2
         '
@@ -80,24 +68,37 @@ Partial Class Grephyr
         Me.Panel1.Size = New System.Drawing.Size(87, 91)
         Me.Panel1.TabIndex = 5
         '
+        'RootNode2
+        '
+        Me.RootNode2.AccessibleName = "GraphNode"
+        Me.RootNode2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.RootNode2.BackColor = System.Drawing.Color.Transparent
+        Me.RootNode2.BackgroundImage = CType(resources.GetObject("RootNode2.BackgroundImage"), System.Drawing.Image)
+        Me.RootNode2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.RootNode2.Location = New System.Drawing.Point(165, 44)
+        Me.RootNode2.Name = "RootNode2"
+        Me.RootNode2.Size = New System.Drawing.Size(195, 193)
+        Me.RootNode2.TabIndex = 6
+        '
         'Grephyr
         '
         Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(969, 534)
+        Me.Controls.Add(Me.RootNode2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.RootNode)
         Me.Name = "Grephyr"
         Me.Text = "Grephyr"
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
-End Sub
+    End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents RootNode As Global.Grephyr.CircleText
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents RootNode2 As Global.Grephyr.CircleText
 
 End Class

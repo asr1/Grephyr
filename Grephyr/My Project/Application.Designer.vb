@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Grephyr.AddNode
+            Me.MainForm = Global.Grephyr.Grephyr
         End Sub
     End Class
 End Namespace

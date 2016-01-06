@@ -75,12 +75,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddNode.Designer.vb">
-      <DependentUpon>AddNode.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AddNode.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="CircleText.Designer.vb">
       <DependentUpon>CircleText.vb</DependentUpon>
     </Compile>
@@ -109,11 +103,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Resources\AddNode.designer.vb">
+      <DependentUpon>AddNode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AddNode.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddNode.resx">
-      <DependentUpon>AddNode.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CircleText.resx">
       <DependentUpon>CircleText.vb</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +122,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AddNode.resx">
+      <DependentUpon>AddNode.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -147,9 +147,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GrephyrSelected.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="obj\Debug\Grephyr.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

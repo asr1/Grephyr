@@ -11,6 +11,16 @@
         Me.label.Text = name
     End Sub
 
+    Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+
+
     Private Sub CircleText_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         '   oldLoc =  = Me.Location
