@@ -23,7 +23,7 @@ Partial Class Grephyr
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Grephyr))
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.AddBtn = New System.Windows.Forms.Button()
         Me.Savebtn = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.ctrlPanel = New System.Windows.Forms.Panel()
@@ -31,14 +31,14 @@ Partial Class Grephyr
         Me.ctrlPanel.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button1
+        'AddBtn
         '
-        Me.Button1.Location = New System.Drawing.Point(3, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Add"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.AddBtn.Location = New System.Drawing.Point(3, 3)
+        Me.AddBtn.Name = "AddBtn"
+        Me.AddBtn.Size = New System.Drawing.Size(75, 23)
+        Me.AddBtn.TabIndex = 0
+        Me.AddBtn.Text = "Add"
+        Me.AddBtn.UseVisualStyleBackColor = True
         '
         'Savebtn
         '
@@ -61,7 +61,7 @@ Partial Class Grephyr
         'ctrlPanel
         '
         Me.ctrlPanel.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.ctrlPanel.Controls.Add(Me.Button1)
+        Me.ctrlPanel.Controls.Add(Me.AddBtn)
         Me.ctrlPanel.Controls.Add(Me.Button3)
         Me.ctrlPanel.Controls.Add(Me.Savebtn)
         Me.ctrlPanel.Location = New System.Drawing.Point(860, 12)
@@ -97,7 +97,7 @@ Partial Class Grephyr
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents AddBtn As System.Windows.Forms.Button
     Friend WithEvents RootNode As Global.Grephyr.CircleText
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Savebtn As System.Windows.Forms.Button

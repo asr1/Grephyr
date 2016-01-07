@@ -1,6 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.PowerPacks
 
-Public Class CircleText
+<Serializable()> Public Class CircleText
     Private drag As Boolean = False
     Private xPos, yPos As Integer
     'Private oldLoc As Point
@@ -11,7 +11,7 @@ Public Class CircleText
     Public lines As New List(Of LineShape)    'And lines
     Public selfs As New List(Of OvalShape) 'Add self loops
 
-    Sub New(ByVal name As String)
+    Public Sub New(ByVal name As String)
         InitializeComponent()
         Me.label.Text = name
     End Sub
@@ -28,7 +28,7 @@ Public Class CircleText
 
     End Sub
 
-    Sub New()
+    Public Sub New()
 
         ' This call is required by the designer.
         InitializeComponent()

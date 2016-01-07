@@ -1,4 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.PowerPacks
+Imports System.Xml.Serialization
+Imports System.IO
 
 Public Class Grephyr
 
@@ -9,7 +11,27 @@ Public Class Grephyr
     Private nodeCount As Integer = 1
 
     Private Sub callsave()
-        Save.ShowDialog()
+        save.ShowDialog()
+        'Save each object
+        If Not save.FileName = "" Then
+
+            Dim objStreamWriter As New StreamWriter(save.FileName)
+            For Each cont In Me.Controls
+
+
+                If TypeOf cont Is CircleText Then
+                    Try
+                        Dim serializer As New XmlSerializer(cont.GetType)
+                        serializer.Serialize(objStreamWriter, DirectCast(cont, CircleText))
+                    Catch ex As System.InvalidOperationException
+                        MsgBox(ex.InnerException.ToString)
+                    End Try
+                End If
+              
+            Next
+            objStreamWriter.Close()
+
+        End If
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -17,11 +39,8 @@ Public Class Grephyr
         canvas.Parent = Me
     End Sub
 
-    Private Sub CircleText2_MouseDown(sender As Object, e As MouseEventArgs) Handles RootNode.MouseDown
 
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub AddBtn_Click(sender As Object, e As EventArgs) Handles AddBtn.Click
         AddNode.Show()
     End Sub
 
@@ -32,7 +51,8 @@ Public Class Grephyr
     Private Sub savebtn_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
         'System.Threading.Thread.CurrentThread.SetApartmentState(System.Threading.ApartmentState.STA)
         save.Filter = "Grephyr File|*.gzy"
-        save.Title = "Test"
+        save.Title = "Select a file to save"
+        'Have to make this in a separate thread.
         Dim trd As System.Threading.Thread
         trd = New Threading.Thread(New System.Threading.ThreadStart(AddressOf callsave))
         trd.SetApartmentState(Threading.ApartmentState.STA)
