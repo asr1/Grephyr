@@ -29,10 +29,8 @@
     End Sub
 
     Public Sub New()
-
         ' This call is required by the designer.
         InitializeComponent()
-
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -86,13 +84,5 @@
 
     Private Sub CircleText_MouseUp(sender As Object, e As MouseEventArgs) Handles MyBase.MouseUp
         drag = False
-    End Sub
-
-    Private Sub label_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
     End Sub
 End Class

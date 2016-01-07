@@ -10,3 +10,5 @@ C:\Users\Alex\Documents\Visual Studio 2012\Projects\Grephyr\Grephyr\bin\Debug\Gr
 C:\Users\Alex\Documents\Visual Studio 2012\Projects\Grephyr\Grephyr\bin\Debug\Grephyr.exe
 C:\Users\Alex\Documents\Visual Studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.exe
 C:\Users\Alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\bin\Debug\Grephyr.dll
+C:\Users\Alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\bin\Debug\Grephyr.xml
+C:\Users\Alex\documents\visual studio 2012\Projects\Grephyr\Grephyr\obj\Debug\Grephyr.vbprojResolveAssemblyReference.cache
