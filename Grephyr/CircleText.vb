@@ -9,10 +9,23 @@ Public Class CircleText
 
     Public neighbors As New List(Of CircleText) 'Keep track of all neighbors
     Public lines As New List(Of LineShape)    'And lines
+    Public selfs As New List(Of OvalShape) 'Add self loops
 
     Sub New(ByVal name As String)
         InitializeComponent()
         Me.label.Text = name
+    End Sub
+
+    Protected Overrides Sub finalize()
+        'Remove lines on delete
+        For Each line As LineShape In lines
+            Grephyr.canvas.Shapes.Remove(line)
+        Next
+
+        For Each circ As OvalShape In selfs
+            Grephyr.canvas.Shapes.Remove(circ)
+        Next
+
     End Sub
 
     Sub New()
@@ -33,7 +46,7 @@ Public Class CircleText
         If e.Button = Windows.Forms.MouseButtons.Left Then
             drag = True
             'Update the old node
-            circ = CType(sender, CircleText) 'Safe cast, we know what sender will be
+            circ = DirectCast(sender, CircleText) 'Safe cast, we know what sender will be
             'The mouse's starting location may not be equal to the node's location
             xPos = e.X
             yPos = e.Y
@@ -61,6 +74,11 @@ Public Class CircleText
 
                 Me.lines.Add(line)
                 neighbor.lines.Add(line)
+            Next
+
+            'Move each self shape
+            For Each circ As OvalShape In Me.selfs
+                circ.Location = cLoc
             Next
 
         End If

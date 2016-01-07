@@ -10,11 +10,11 @@ Public Class AddNode
     Private Sub comboChange(ByVal sender As Object, _
         ByVal e As System.EventArgs) Handles fromList.SelectedIndexChanged, toList.SelectedIndexChanged
 
-        Dim box As ComboBox = CType(sender, ComboBox)
+        Dim box As ComboBox = DirectCast(sender, ComboBox)
 
         For Each cont As Control In Grephyr.Controls
             If TypeOf cont Is CircleText Then
-                If CType(cont, CircleText).label.Text = box.SelectedItem Then
+                If DirectCast(cont, CircleText).label.Text = box.SelectedItem Then
                     'Select the correct node
                     cont.BackgroundImage = My.Resources.GrephyrSelected 'Selected
                     If box.Name = "fromList" Then
@@ -35,8 +35,8 @@ Public Class AddNode
         'Populate both comboboxes
         For Each cont As Control In Grephyr.Controls
             If TypeOf cont Is CircleText Then
-                fromList.Items.Add(CType(cont, CircleText).label.Text)
-                toList.Items.Add(CType(cont, CircleText).label.Text)
+                fromList.Items.Add(DirectCast(cont, CircleText).label.Text)
+                toList.Items.Add(DirectCast(cont, CircleText).label.Text)
             End If
         Next
         fromList.Items.Add("[New Node]")

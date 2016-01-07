@@ -8,11 +8,11 @@ Public Class AddNode
     Private Sub comboChange(ByVal sender As Object, _
         ByVal e As System.EventArgs) Handles fromList.SelectedIndexChanged, toList.SelectedIndexChanged
 
-        Dim box As ComboBox = CType(sender, ComboBox)
+        Dim box As ComboBox = DirectCast(sender, ComboBox)
 
         For Each cont As Control In Grephyr.Controls
             If TypeOf cont Is CircleText Then
-                If CType(cont, CircleText).label.Text = box.SelectedItem Then
+                If DirectCast(cont, CircleText).label.Text = box.SelectedItem Then
                     'Select the correct node
                     cont.BackgroundImage = My.Resources.GrephyrSelected 'Selected
                     If box.Name = "fromList" Then
@@ -23,7 +23,6 @@ Public Class AddNode
                 End If
             End If
         Next
-    
 
     End Sub
 
@@ -33,8 +32,8 @@ Public Class AddNode
         toList.Items.Clear()
         For Each cont As Control In Grephyr.Controls
             If TypeOf cont Is CircleText Then
-                fromList.Items.Add(CType(cont, CircleText).label.Text)
-                toList.Items.Add(CType(cont, CircleText).label.Text)
+                fromList.Items.Add(DirectCast(cont, CircleText).label.Text)
+                toList.Items.Add(DirectCast(cont, CircleText).label.Text)
             End If
         Next
         fromList.Items.Add("[New Node]")
@@ -78,22 +77,33 @@ Public Class AddNode
                 toNode = New CircleText(toLabel)
                 Grephyr.Controls.Add(toNode)
             End If
+
         End If
 
-        'Fromnode is null. Why?
-        CType(fromNode, CircleText).neighbors.Add(toNode)
-        CType(toNode, CircleText).neighbors.Add(fromNode)
+        'Self loop
+        If fromNode.Equals(toNode) Then
+            Dim circ As New OvalShape
+            circ.Parent = Grephyr.canvas
+            circ.Location = DirectCast(fromNode, CircleText).cLoc
+            circ.Size = New System.Drawing.Size(120, 120)
+            DirectCast(fromNode, CircleText).selfs.Add(circ)
+
+            Me.Hide()
+            Exit Sub
+        End If
+
+        DirectCast(fromNode, CircleText).neighbors.Add(toNode)
+        DirectCast(toNode, CircleText).neighbors.Add(fromNode)
 
         'Drawline
-        Grephyr.canvas.Parent = Grephyr
         Dim line As New LineShape
         line.Parent = Grephyr.canvas
 
         line.StartPoint = fromNode.cloc
         line.EndPoint = toNode.cloc
 
-        CType(fromNode, CircleText).lines.Add(line)
-        CType(toNode, CircleText).lines.Add(line)
+        DirectCast(fromNode, CircleText).lines.Add(line)
+        DirectCast(toNode, CircleText).lines.Add(line)
 
         Me.Hide()
     End Sub

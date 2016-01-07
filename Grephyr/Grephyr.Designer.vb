@@ -24,11 +24,11 @@ Partial Class Grephyr
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Grephyr))
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Savebtn = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ctrlPanel = New System.Windows.Forms.Panel()
         Me.RootNode2 = New Global.Grephyr.CircleText()
-        Me.Panel1.SuspendLayout()
+        Me.ctrlPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -40,14 +40,14 @@ Partial Class Grephyr
         Me.Button1.Text = "Add"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button2
+        'Savebtn
         '
-        Me.Button2.Location = New System.Drawing.Point(3, 32)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Save"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Savebtn.Location = New System.Drawing.Point(3, 32)
+        Me.Savebtn.Name = "Savebtn"
+        Me.Savebtn.Size = New System.Drawing.Size(75, 23)
+        Me.Savebtn.TabIndex = 3
+        Me.Savebtn.Text = "Save"
+        Me.Savebtn.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -58,15 +58,16 @@ Partial Class Grephyr
         Me.Button3.Text = "[Line]"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'Panel1
+        'ctrlPanel
         '
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Location = New System.Drawing.Point(870, 12)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(87, 91)
-        Me.Panel1.TabIndex = 5
+        Me.ctrlPanel.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.ctrlPanel.Controls.Add(Me.Button1)
+        Me.ctrlPanel.Controls.Add(Me.Button3)
+        Me.ctrlPanel.Controls.Add(Me.Savebtn)
+        Me.ctrlPanel.Location = New System.Drawing.Point(860, 12)
+        Me.ctrlPanel.Name = "ctrlPanel"
+        Me.ctrlPanel.Size = New System.Drawing.Size(87, 91)
+        Me.ctrlPanel.TabIndex = 5
         '
         'RootNode2
         '
@@ -85,20 +86,22 @@ Partial Class Grephyr
         Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(969, 534)
         Me.Controls.Add(Me.RootNode2)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.ctrlPanel)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Grephyr"
         Me.Text = "Grephyr"
-        Me.Panel1.ResumeLayout(False)
+        Me.ctrlPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents RootNode As Global.Grephyr.CircleText
     Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Savebtn As System.Windows.Forms.Button
+    Friend WithEvents ctrlPanel As System.Windows.Forms.Panel
     Friend WithEvents RootNode2 As Global.Grephyr.CircleText
 
 End Class
