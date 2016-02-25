@@ -1,0 +1,20 @@
+Grephyr TODO:
+
+
+Add a "none" option so we can only add one node if we want. (to the dropdown)
+or add a "just add one node" button. (to the sidebar)
+Make sidebar always stay alive. ---???? what does this mean
+Saving
+resize images/nodes
+Keep panel in corner on scroll ---uhhh let's come back to this later.
+
+
+Grephyr TODONE:
+New Node
+Lines
+Make each node know its lines.
+Make each node aware of its neighbors
+So just delete those lines every time and then draw new ones?
+Lines--Now make them update when I drag/drop
+Keep panel in corner
+Self loops
